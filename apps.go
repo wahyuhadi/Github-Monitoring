@@ -117,7 +117,18 @@ func (i Input) call() {
 		fmt.Println("[!] Total found for keyword " , i.isKeyword," is ", res.TotalCount)
 		return
 	}
-	fmt.Println(res.TotalCount)
+
+	for _, element := range res.Items {
+		
+		fmt.Println("\n[+] URL   :",element.HTMLURL)
+		fmt.Println("[+] Name  :",element.Name)
+		fmt.Println("[+] Path  :",element.Path)
+		fmt.Println("[+] Owner :",element.Repository.Owner.Login)
+	}
+
+	fmt.Println("\n[+] Finished ")
+	fmt.Println("[+] Total Found is ", res.TotalCount)
+	
 }
 
 
